@@ -1,11 +1,13 @@
 # create flask app - done
-# create template html files
-# create static css 
+# create template base files
+    # create static css 
 # bring images into static
 # connect it
 from flask import Flask, render_template, redirect, url_for, request
+from flask_bootstrap import Bootstrap5
 
 app = Flask(__name__)
+Bootstrap5(app)
 
 @app.route("/")
 def home():
