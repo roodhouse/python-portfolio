@@ -6,3 +6,11 @@ body {
 .nav-link {
     color: #d1d5db
 }
+
+.active {
+    display: block;
+}
+
+.inactive {
+    display: none;
+}
