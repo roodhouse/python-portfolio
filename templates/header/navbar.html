@@ -1,15 +1,13 @@
-<nav class="navbar navbar-expand-lg bg-[#0a192f]">
-    <div id="nav-logo" class="container-fluid">
-        <a href="#" class="navbar-brand">
-            <img src="{{ url_for('static', filename='images/R.svg') }}"  alt="John Rugh Logo" width="100px">
-        </a>
+<nav id="navbar" class="navbar navbar-expand-lg bg-[#0a192f] py-0 container-fluid">
+    <div id="nav-logo" class="ps-3">
+            <img id="navImg" src="{{ url_for('static', filename='images/R.svg') }}"  alt="John Rugh Logo" width="100px">
     </div>
     <!-- display none at mid viewport -->
-    <div id="menu-bars">
+    <div id="menu-bars" class="pe-3">
         <a href="#"><img src="{{ url_for('static', filename='images/bars-solid.svg') }}" alt="menu bars" width="16px" id="ham" class="active" onclick="toggleClass(event, 'ham', 'x')"></a>
         <a href="#"><img src="{{ url_for('static', filename='images/x.svg') }}" alt="menu bars" width="16px" id="x" class="inactive" onclick="toggleClass(event, 'x', 'ham')"></a>
     </div>
-    <div id="mobileMenu" class="inactive .modal-fullscreen-md-down navbar-nav mr-auto">
+    <div id="mobileMenu" class="inactive mobileMenu modal-fullscreen-md-down navbar-nav mr-auto">
         <a class='nav-link' href="#home">Home</a>
         <a class='nav-link' href="#about">About</a>
         <a class='nav-link' href="#skills">Skills</a>
