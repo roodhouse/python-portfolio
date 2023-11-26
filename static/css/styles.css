@@ -23,7 +23,11 @@ body {
     top: 0;
     left: 0;
     justify-content: center;
-    z-index: -1;
+    background-color: #0a192f;
+}
+
+#menu-bars {
+    z-index: 10;
 }
 
 .mobileMenu a {
@@ -38,4 +42,92 @@ body {
 
 .inactive {
     display: none;
+}
+
+#homeContainer {
+    padding: 0 2rem 0 2rem;
+    height: 100vh;
+}
+
+.nameIs {
+    color: #ff5757;
+}
+
+.fullName {
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+    color: #CCD6F6;
+}
+
+.webDev {
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+    color: #8892B0;
+}
+
+.tagLine {
+    max-width: 700px;
+    padding: 1rem 0 1rem 0;
+    color: #8892B0;
+}
+
+.viewMoreButton {
+    padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+    border: solid;
+    border-width: 2px;
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0 0.5rem 0;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+}
+
+.arrowImage {
+    margin-left: 0.75rem;
+}
+
+.viewMoreButton:hover {
+    background-color: #ff5757;
+    border-color: #ff5757;
+}
+
+.viewMoreButton:hover .arrowImage {
+    transform: rotate(90deg);
+}
+
+.arrowImage {
+    transition: transform 0.3s ease;
+}
+
+.homeImageContainer {
+    margin-left: 5%;
+}
+
+/* about section */
+
+#aboutWrapper {
+    background-color: #0a192f;
+    color: #d1d5db;
+}
+
+.g-2rem {
+    --bs-gutter-x: 2rem;
+}
+
+.pb-2rem {
+    padding-bottom: 2rem;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
+
+.border-color {
+    border-color: #ff5757 !important;
+}
+
+#aboutContainer {
+    height: 100vh;
 }
