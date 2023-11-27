@@ -1,8 +1,3 @@
-# create flask app - done
-# create template base files
-    # create static css 
-# bring images into static
-# connect it
 from flask import Flask, render_template, redirect, url_for, request
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
@@ -21,6 +16,13 @@ class Skills(db.Model):
     img_url = db.Column(db.String(250), nullable=False)
 
 class Work(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(250), unique=True, nullable=False)
+    img_url = db.Column(db.String(250), nullable=False)
+    demo = db.Column(db.String(250), nullable=False)
+    code = db.Column(db.String(250), nullable=False)
+
+class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(250), unique=True, nullable=False)
     img_url = db.Column(db.String(250), nullable=False)
@@ -91,21 +93,7 @@ with app.app_context():
 #     img_url = 'static/images/mysql.svg'
 # )
 
-# with app.app_context():
-#     db.session.add(html)
-#     db.session.add(css)
-#     db.session.add(javascript)
-#     db.session.add(react)
-#     db.session.add(node)
-#     db.session.add(aws)
-#     db.session.add(github)
-#     db.session.add(tailwind)
-#     db.session.add(python)
-#     db.session.add(flask)
-#     db.session.add(mongo)
-#     db.session.add(mysql)
-#     db.session.commit()
-
+# # work seed
 # entertainment = Work(
 #     title = 'Full Stack Entertainment App',
 #     img_url = 'static/images/work/entertainmentApp.png',
@@ -161,6 +149,99 @@ with app.app_context():
 #     code = 'https://github.com/roodhouse/UPIN'
 # )
 
+# # project seed
+# connect_four = Project(
+#     title = 'Connect Four',
+#     img_url = 'static/images/project/connectFour.png',
+#     demo = 'https://connect.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-connect-four'
+# )
+# tic = Project(
+#     title = 'Tic Tack Toe',
+#     img_url = 'static/images/project/tic.png',
+#     demo = 'https://tic.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-tic-tac-toe'
+# )
+# comments = Project(
+#     title = 'Comments',
+#     img_url = 'static/images/project/comments.png',
+#     demo = 'https://comments.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-comments'
+# )
+
+# clock = Project(
+#     title = 'Clock',
+#     img_url = 'static/images/project/clock.png',
+#     demo = 'https://clock.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-clock'
+# )
+# dictionary = Project(
+#     title = 'Dictionary',
+#     img_url = 'static/images/project/dictionary.png',
+#     demo = 'https://dictionary.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-dictionary'
+# )
+# calc = Project(
+#     title = 'Calculator',
+#     img_url = 'static/images/project/calc.png',
+#     demo = 'https://calc.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-calculator'
+# )
+# countdown = Project(
+#     title = 'Countdown',
+#     img_url = 'static/images/project/countdown.png',
+#     demo = 'https://countdown.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-launch-countdown'
+# )
+# credit = Project(
+#     title = 'Interactive CC',
+#     img_url = 'static/images/project/credit.png',
+#     demo = 'https://credit.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-interactive-card'
+# )
+# age = Project(
+#     title = 'Age Calculator',
+#     img_url = 'static/images/project/age.png',
+#     demo = 'https://age.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-age-calc'
+# )
+# bmi = Project(
+#     title = 'BMI Calculator',
+#     img_url = 'static/images/project/bmi.png',
+#     demo = 'https://bmi.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-bmi'
+# )
+# intro = Project(
+#     title = 'Intro Landing',
+#     img_url = 'static/images/project/intro.png',
+#     demo = 'https://intro.rugh.us/',
+#     code = 'https://github.com/roodhouse/new-frontend-mentor-intro-project'
+# )
+# soon = Project(
+#     title = 'Coming Soon',
+#     img_url = 'static/images/project/base.png',
+#     demo = 'https://base-apparel.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-base-apparel'
+# )
+# pod = Project(
+#     title = 'Pod Request',
+#     img_url = 'static/images/project/request.png',
+#     demo = 'https://request.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-pod-request-access'
+# )
+# skilled = Project(
+#     title = 'Skilled',
+#     img_url = 'static/images/project/skilled.png',
+#     demo = 'https://skilled.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-skilled-landing-page'
+# )
+# work_it = Project(
+#     title = 'Work It',
+#     img_url = 'static/images/project/workit.png',
+#     demo = 'https://workit.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-workit-landing-page'
+# )
+
 # with app.app_context():
 #     db.session.add(entertainment)
 #     db.session.add(galleria)
@@ -171,6 +252,34 @@ with app.app_context():
 #     db.session.add(rd_home)
 #     db.session.add(ebook)
 #     db.session.add(review)
+#     db.session.add(html)
+#     db.session.add(css)
+#     db.session.add(javascript)
+#     db.session.add(react)
+#     db.session.add(node)
+#     db.session.add(aws)
+#     db.session.add(github)
+#     db.session.add(tailwind)
+#     db.session.add(python)
+#     db.session.add(flask)
+#     db.session.add(mongo)
+#     db.session.add(mysql)
+
+#     db.session.add(connect_four)
+#     db.session.add(tic)
+#     db.session.add(comments)
+#     db.session.add(clock)
+#     db.session.add(dictionary)
+#     db.session.add(calc)
+#     db.session.add(countdown)
+#     db.session.add(credit)
+#     db.session.add(age)
+#     db.session.add(bmi)
+#     db.session.add(intro)
+#     db.session.add(soon)
+#     db.session.add(pod)
+#     db.session.add(skilled)
+#     db.session.add(work_it)
 #     db.session.commit()
 
 
@@ -179,9 +288,11 @@ def home():
     with app.app_context():
         result = db.session.execute(db.select(Skills))
         work_result = db.session.execute(db.select(Work))
+        project_result = db.session.execute(db.select(Project))
         all_skills = list(result.scalars())
         all_work = list(work_result.scalars())
-    return render_template("index.html", skills=all_skills, work=all_work)
+        all_project = list(project_result.scalars())
+    return render_template("index.html", skills=all_skills, work=all_work, project=all_project)
 
 if __name__ == '__main__':
     app.run(port=5003, debug=True)
