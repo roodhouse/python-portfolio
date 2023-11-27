@@ -14,6 +14,14 @@
                     <div class="workDetailsTitle text-center">
                         <span class="workTitle">{{w.title}}</span>
                     </div>
+                    <div class="workButtonsContainer text-center pt-2rem">
+                        <a href="{{w.demo}}" target='_blank'>
+                            <button class="workButtons fw-bolder">Demo</button>
+                        </a>
+                        <a href="{{w.code}}" target='_blank'>
+                            <button class="workButtons fw-bolder">Code</button>
+                        </a>
+                    </div>
                 </div>
             </div>
         {% endfor %}
