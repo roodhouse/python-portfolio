@@ -1,0 +1,18 @@
+<div id="skillsContainer" class="mw-1000 mx-auto px-3 d-flex flex-column justify-content-center w-100">
+    <div id="skillsTitleContainer">
+        <p class="text-4xl fw-bolder border-bottom border-4 border-color d-inline m-0">
+            Skills
+        </p>
+        <p class="py-3 m-0">
+            // These are the technologies I've worked with
+        </p>
+    </div>
+    <div id="skillsGridContainer" class="skillGrid pb-2rem pt-2rem text-center">
+        {% for skill in skills %}
+            <div id="{{skill.title}}SkillContainer" class="skillsItems">
+                <img src="{{skill.img_url}}" alt="{{skill.title}} image" class="skillImage">
+                <p class="my-3">{{skill.title}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>

@@ -106,7 +106,7 @@ body {
 
 /* about section */
 
-#aboutWrapper {
+#aboutWrapper, #skillsWrapper {
     background-color: #0a192f;
     color: #d1d5db;
 }
@@ -128,6 +128,35 @@ body {
     border-color: #ff5757 !important;
 }
 
-#aboutContainer {
+#aboutContainer, #skillsContainer {
     height: 100vh;
+}
+
+/* skills */
+
+.skillGrid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+}
+
+.pt-2rem {
+    padding-top: 2rem;
+}
+
+.skillsItems {
+    transition: transform 0.5s ease;
+    box-shadow: 0 4px 6px -1px #040c16, 0 2px 4px -2px #040c16;
+}
+
+.skillsItems:hover {
+    transform: scale(1.1)
+}
+
+.skillImage {
+    width: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: 5rem;
+    max-width: 100%;
 }
