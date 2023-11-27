@@ -1,0 +1,17 @@
+<div id="workContainer" class="mw-1000 mx-auto px-3 d-flex flex-column justify-content-center w-100">
+    <div id="workTitleContainer" class="pb-2rem">
+        <p class="text-4xl fw-bolder border-bottom border-4 border-color d-inline m-0">
+            Work
+        </p>
+        <p class="py-3 m-0">
+            // Check out some of my recent work
+        </p>
+    </div>
+    <div id="workGridContainer" class="workGrid pb-2rem pt-2rem text-center">
+        {% for w in work %}
+            <div id="{{w.title}}workContainer" class="workItems">
+                <p>{{w.title}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>

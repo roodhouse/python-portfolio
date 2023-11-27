@@ -20,6 +20,13 @@ class Skills(db.Model):
     title = db.Column(db.String(250), unique=True, nullable=False)
     img_url = db.Column(db.String(250), nullable=False)
 
+class Work(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(250), unique=True, nullable=False)
+    img_url = db.Column(db.String(250), nullable=False)
+    demo = db.Column(db.String(250), nullable=False)
+    code = db.Column(db.String(250), nullable=False)
+
 with app.app_context():
     db.create_all()
 
@@ -99,14 +106,82 @@ with app.app_context():
 #     db.session.add(mysql)
 #     db.session.commit()
 
+# entertainment = Work(
+#     title = 'Full Stack Entertainment App',
+#     img_url = 'static/images/work/entertainmentApp.png',
+#     demo = 'https://entertainment.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-entertainment'
+# )
+# galleria = Work(
+#     title = 'Art Gallery',
+#     img_url = 'static/images/work/galleria.png',
+#     demo = 'https://galleria.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-galleria'
+# )
+# space = Work(
+#     title = 'Space Tourism',
+#     img_url = 'static/images/work/space.png',
+#     demo = 'https://space.rugh.us/',
+#     code = 'https://github.com/roodhouse/frontend-mentor-space'
+# )
+# rd_blog = Work(
+#     title = 'Rugh Design Blog',
+#     img_url = 'static/images/work/color-review-new.png',
+#     demo = 'https://rugh.design/review',
+#     code = 'https://github.com/roodhouse/rugh-design-landing-page/tree/main/client/src/components/blog'
+# )
+# bucket = Work(
+#     title = 'Bucket List Blog',
+#     img_url = 'static/images/work/bucket_list.png',
+#     demo = 'https://bucket-list-blog.herokuapp.com/',
+#     code = 'https://github.com/roodhouse/project2-CRUD-Happens'
+# )
+# color_wheel = Work(
+#     title = 'Color Wheel',
+#     img_url = 'static/images/work/color-wheel-icon.svg',
+#     demo = 'https://rugh.design/color-wheel/',
+#     code = 'https://github.com/roodhouse/rugh-design-color-wheel'
+# )
+# rd_home = Work(
+#     title = 'Rugh Design Homepage',
+#     img_url = 'static/images/work/RDhome.png',
+#     demo = 'https://rugh.design/',
+#     code = 'https://github.com/roodhouse/rugh-design-landing-page'
+# )
+# ebook = Work(
+#     title = 'eBook Landing Page',
+#     img_url = 'static/images/work/paint_colors.png',
+#     demo = 'https://www.rughdesign.com/own-your-space/',
+#     code = 'https://www.rughdesign.com/own-your-space/'
+# )
+# review = Work(
+#     title = 'Re:View',
+#     img_url = 'static/images/work/review_blog.png',
+#     demo = 'https://review-binary-beast.herokuapp.com/',
+#     code = 'https://github.com/roodhouse/UPIN'
+# )
+
+# with app.app_context():
+#     db.session.add(entertainment)
+#     db.session.add(galleria)
+#     db.session.add(space)
+#     db.session.add(rd_blog)
+#     db.session.add(bucket)
+#     db.session.add(color_wheel)
+#     db.session.add(rd_home)
+#     db.session.add(ebook)
+#     db.session.add(review)
+#     db.session.commit()
 
 
 @app.route("/")
 def home():
     with app.app_context():
         result = db.session.execute(db.select(Skills))
+        work_result = db.session.execute(db.select(Work))
         all_skills = list(result.scalars())
-    return render_template("index.html", skills=all_skills)
+        all_work = list(work_result.scalars())
+    return render_template("index.html", skills=all_skills, work=all_work)
 
 if __name__ == '__main__':
     app.run(port=5003, debug=True)
