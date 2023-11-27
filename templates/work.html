@@ -7,10 +7,14 @@
             // Check out some of my recent work
         </p>
     </div>
-    <div id="workGridContainer" class="workGrid pb-2rem pt-2rem text-center">
+    <div id="workGridContainer" class="workGrid text-center mb-3">
         {% for w in work %}
-            <div id="{{w.title}}workContainer" class="workItems">
-                <p>{{w.title}}</p>
+            <div id="{{w.title}}workContainer" class="workItems" style="background-image: url('{{w.img_url}}');">
+                <div id="{{w.title}}detailsContainer" class="workDetails">
+                    <div class="workDetailsTitle text-center">
+                        <span class="workTitle">{{w.title}}</span>
+                    </div>
+                </div>
             </div>
         {% endfor %}
     </div>
