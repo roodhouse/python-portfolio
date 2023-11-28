@@ -118,7 +118,7 @@ body {
 }
 
 .g-2rem {
-    --bs-gutter-x: 2rem;
+    gap: 2rem;
 }
 
 .pb-2rem {
@@ -289,4 +289,48 @@ body {
 #submit:hover {
     background-color: #ff5757;
     border-color: #ff5757;
+}
+
+/* Media queries */
+
+/* small */
+@media only screen and (min-width: 575px) {
+    .fullName, .webDev {
+        font-size: 4.5rem;
+        line-height: 1;
+    }
+
+    #aboutCopyTextContainer {
+        display: grid;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #aboutCopyTitleContainer {
+        display: grid;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        padding-bottom: 2rem;
+    }
+
+    #aboutCopyTitle, #aboutCopyText {
+        text-align: right;
+        width: 100%;
+    }
+
+    .skillGrid, .projectGrid {
+        grid-template-columns: repeat(4,minmax(0,1fr));
+    }
+
+    .workGrid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+    #contactContainer {
+        width: 100%;
+    }
+
+    form div:last-of-type {
+        margin-bottom: 0 !important;
+    }
 }

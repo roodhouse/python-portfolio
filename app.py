@@ -5,9 +5,9 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, EmailField, TextAreaField
 from wtforms.validators import DataRequired
 
-# make menu sticky
 # responsive design
 # sidebar
+# hook up view work button
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
