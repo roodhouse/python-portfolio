@@ -45,7 +45,7 @@ class Contact(db.Model):
 class NewContactForm(FlaskForm):
     name = StringField('', validators=[DataRequired()], render_kw={'placeholder': 'Name'})
     email = EmailField('', validators=[DataRequired()], render_kw={'placeholder': 'Email'})
-    messsage = TextAreaField('', validators=[DataRequired()], render_kw={'rows': 10, 'placeholder': 'Message'})
+    message = TextAreaField('', validators=[DataRequired()], render_kw={'rows': 10, 'placeholder': 'Message'})
     submit = SubmitField('Let\'s Collaborate')
 
 with app.app_context():
@@ -315,12 +315,15 @@ def home():
         return render_template("index.html", skills=all_skills, work=all_work, project=all_project, form=form)
     else:
         if form.validate_on_submit():
+            
             name = form.name.data
             email = form.email.data
             message = form.message.data
 
             new_contact = Contact(name=name, email=email, message=message)
-        
+
+            print(new_contact)
+
             with app.app_context():
                 try:
                     db.session.add(new_contact)
