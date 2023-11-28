@@ -268,3 +268,19 @@ body {
 .form-control::placeholder {
     color: #9BA3AF;
 }
+
+#submit {
+    color: white;
+    padding: 0.75rem 1rem 0.75rem 1rem;
+    margin: 2rem auto 2rem auto;
+    display: flex;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+#submit:hover {
+    background-color: #ff5757;
+    border-color: #ff5757;
+}

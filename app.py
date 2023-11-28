@@ -5,7 +5,9 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, EmailField, TextAreaField
 from wtforms.validators import DataRequired
 
-# finish styling of button
+# make menu sticky
+# responsive design
+# sidebar
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
