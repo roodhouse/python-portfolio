@@ -1,6 +1,11 @@
 from flask import Flask, render_template, redirect, url_for, request
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField, EmailField, TextAreaField
+from wtforms.validators import DataRequired
+
+# finish styling of button
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
@@ -28,6 +33,18 @@ class Project(db.Model):
     img_url = db.Column(db.String(250), nullable=False)
     demo = db.Column(db.String(250), nullable=False)
     code = db.Column(db.String(250), nullable=False)
+
+class Contact(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(250), nullable=False)
+    email = db.Column(db.String(250), nullable=False)
+    message = db.Column(db.String(1000), nullable=False)
+
+class NewContactForm(FlaskForm):
+    name = StringField('', validators=[DataRequired()], render_kw={'placeholder': 'Name'})
+    email = EmailField('', validators=[DataRequired()], render_kw={'placeholder': 'Email'})
+    messsage = TextAreaField('', validators=[DataRequired()], render_kw={'rows': 10, 'placeholder': 'Message'})
+    submit = SubmitField('Let\'s Collaborate')
 
 with app.app_context():
     db.create_all()
@@ -282,17 +299,37 @@ with app.app_context():
 #     db.session.add(work_it)
 #     db.session.commit()
 
-
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def home():
-    with app.app_context():
-        result = db.session.execute(db.select(Skills))
-        work_result = db.session.execute(db.select(Work))
-        project_result = db.session.execute(db.select(Project))
-        all_skills = list(result.scalars())
-        all_work = list(work_result.scalars())
-        all_project = list(project_result.scalars())
-    return render_template("index.html", skills=all_skills, work=all_work, project=all_project)
+    form = NewContactForm()
+    if request.method == 'GET':
+        with app.app_context():
+            result = db.session.execute(db.select(Skills))
+            work_result = db.session.execute(db.select(Work))
+            project_result = db.session.execute(db.select(Project))
+            all_skills = list(result.scalars())
+            all_work = list(work_result.scalars())
+            all_project = list(project_result.scalars())
+        return render_template("index.html", skills=all_skills, work=all_work, project=all_project, form=form)
+    else:
+        if form.validate_on_submit():
+            name = form.name.data
+            email = form.email.data
+            message = form.message.data
+
+            new_contact = Contact(name=name, email=email, message=message)
+        
+            with app.app_context():
+                try:
+                    db.session.add(new_contact)
+                    db.session.commit()
+                    return redirect('/')
+                except Exception as e:
+                    print('failure:', e)
+                    db.session.rollback()
+        else:
+            return render_template("index.html", skills=all_skills, work=all_work, project=all_project, form=form)
+    return render_template('index.html', form=form)
 
 if __name__ == '__main__':
     app.run(port=5003, debug=True)

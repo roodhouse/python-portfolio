@@ -106,7 +106,7 @@ body {
 
 /* about section */
 
-#aboutWrapper, #skillsWrapper, #workWrapper {
+#aboutWrapper, #skillsWrapper, #workWrapper, #contactWrapper {
     background-color: #0a192f;
     color: #d1d5db;
 }
@@ -235,4 +235,36 @@ body {
 
 .projectButtons {
     padding: 0 1rem 0 1rem;
+}
+
+/* contact */
+
+#contactWrapper {
+    height: 100vh;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 100%;
+}
+
+.form div {
+    display: flex;
+}
+
+.form-control {
+    padding: 0.5rem;
+    background-color: #CCD6F6;
+    border-radius: 0;
+}
+
+.form-control::placeholder {
+    color: #9BA3AF;
 }
