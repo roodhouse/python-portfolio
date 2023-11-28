@@ -1,11 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Portfolio</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}John Rugh Portfolio{% endblock %}
+
+{% block content %}
+<div id="headerContainer">
+    {% include 'header.html' %}
+</div>
+<div id="homeWrapper" class="w-100 h-100">
+    {% include 'home.html' %}
+</div>
+<div id="aboutWrapper" class="w-100 h-100">
+    {% include 'about.html' %}
+</div>
+<div id="skillsWrapper" class="w-100 h-100">
+    {% include 'skills.html' %}
+</div>
+<div id="workWrapper" class="w-100 h-100">
+    {% include 'work.html' %}
+</div>
+<div id="contactWrapper" class="w-100">
+    {% include 'contact.html' %}
+</div>
+{% endblock %}

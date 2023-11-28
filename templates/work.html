@@ -1,0 +1,57 @@
+<div id="workContainer" class="mw-1000 mx-auto px-3 d-flex flex-column justify-content-center w-100">
+    <div id="workTitleContainer" class="pb-2rem">
+        <p class="text-4xl fw-bolder border-bottom border-4 border-color d-inline m-0">
+            Work
+        </p>
+        <p class="py-3 m-0">
+            // Check out some of my recent work
+        </p>
+    </div>
+    <div id="workGridContainer" class="workGrid text-center mb-3">
+        {% for w in work %}
+            <div id="{{w.title}}workContainer" class="workItems" style="background-image: url('{{w.img_url}}');">
+                <div id="{{w.title}}detailsContainer" class="workDetails">
+                    <div class="workDetailsTitle text-center">
+                        <span class="workTitle">{{w.title}}</span>
+                    </div>
+                    <div class="workButtonsContainer text-center pt-2rem">
+                        <a href="{{w.demo}}" target='_blank'>
+                            <button class="workButtons fw-bolder">Demo</button>
+                        </a>
+                        <a href="{{w.code}}" target='_blank'>
+                            <button class="workButtons fw-bolder">Code</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <!-- begin project section here -->
+    <div id="projectTitleContainer" class="pb-2rem pt-2rem">
+        <p class="text-4xl fw-bolder border-bottom border-4 border-color d-inline m-0">
+            Projects
+        </p>
+        <p class="py-3 m-0">
+            // Check out some of my recent mini projects
+        </p>
+    </div>
+    <div id="projectGridContainer" class="projectGrid text-center mb-3">
+        {% for p in project %}
+            <div id="{{p.title}}projectContainer" class="projectItems" style="background-image: url('{{p.img_url}}');">
+                <div id="{{p.title}}detailsContainer" class="projectDetails">
+                    <div class="projectDetailsTitle text-center">
+                        <span class="projectTitle">{{p.title}}</span>
+                    </div>
+                    <div class="projectButtonsContainer text-center">
+                        <a href="{{p.demo}}" target='_blank'>
+                            <button class="projectButtons fw-bolder">Demo</button>
+                        </a>
+                        <a href="{{p.code}}" target='_blank'>
+                            <button class="projectButtons fw-bolder">Code</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

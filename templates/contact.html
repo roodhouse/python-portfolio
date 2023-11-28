@@ -1,0 +1,14 @@
+{% from 'bootstrap5/form.html' import render_form %}
+<div id="contactContainer">
+    <div id="contactTitleContainer" class="pb-2rem">
+        <p class="text-4xl fw-bolder border-bottom border-4 border-color d-inline m-0">
+            Contact
+        </p>
+        <p class="py-3 m-0">
+            // Submit the form below or shoot me an email - rughjm@gmail.com
+        </p>
+    </div>
+
+    <!-- form div here -->
+    {{ render_form(form) }}
+</div>
