@@ -4,7 +4,7 @@ function toggleClass(event, currentId, otherId) {
     let otherElement = document.getElementById(otherId)
     let mobileMenu = document.getElementById('mobileMenu')
     let logo = document.getElementById('navImg')
-    
+
     if(!currentElement.classList.contains('inactive')) {
             currentElement.classList.replace('active', 'inactive')
             otherElement.classList.replace('inactive', 'active')
