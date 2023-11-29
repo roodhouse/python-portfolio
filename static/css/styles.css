@@ -19,6 +19,7 @@ body {
     height: 80px;
     background-color: #0a192f;
     position: fixed;
+    flex-wrap: nowrap;
 }
 
 .mobileMenu {
@@ -332,5 +333,35 @@ body {
 
     form div:last-of-type {
         margin-bottom: 0 !important;
+    }
+}
+
+/* medium */
+@media only screen and (min-width: 768px) {
+    .nav-link {
+        padding: 0 16px;
+    }
+
+    .workGrid {
+        grid-template-columns: repeat(3,minmax(0,1fr));
+    }
+
+    .projectGrid {
+        grid-template-columns: repeat(6,minmax(0,1fr));
+    }
+
+    #contactContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #contactTitleContainer {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    #workWrapper {
+        padding-top: 150px;
     }
 }
