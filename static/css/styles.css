@@ -2,6 +2,11 @@
     scroll-behavior: smooth;
 }
 
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 body {
     font-family: "Raleway";
     background-color: #0a192f;
@@ -363,5 +368,16 @@ body {
 
     #workWrapper {
         padding-top: 150px;
+    }
+}
+
+/* large */
+@media only screen and (min-width: 992px) {
+    .navbar-expand-lg {
+        justify-content: space-between;
+    }
+
+    #homeContainer, #aboutCopyTextContainer {
+        padding: 0 42px;
     }
 }
