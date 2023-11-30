@@ -408,15 +408,6 @@ def home():
                 print(jsonify({'error': 'Failed to send email', 'details': str(e)}), 500)
                 return redirect('/')
 
-            # with app.app_context():
-            #     try:
-            #         db.session.add(new_contact)
-            #         db.session.commit()
-            #         return redirect('/')
-            #     except Exception as e:
-            #         print('failure:', e)
-            #         db.session.rollback()
-
         else:
             return render_template("index.html", skills=all_skills, work=all_work, project=all_project, form=form)
     return render_template('index.html', form=form)
