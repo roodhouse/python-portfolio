@@ -5,17 +5,6 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, EmailField, TextAreaField
 from wtforms.validators import DataRequired
 
-# responsive design
-    #     :root {
-    # --bs-breakpoint-xs: 0;
-    # --bs-breakpoint-sm: 576px;
-    # --bs-breakpoint-md: 768px;
-    # --bs-breakpoint-lg: 992px;
-    # --bs-breakpoint-xl: 1200px;
-    # --bs-breakpoint-xxl: 1400px
-# sidebar
-# hook up view work button
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 Bootstrap5(app)
@@ -54,6 +43,7 @@ class Social(db.Model):
     name = db.Column(db.String(250), nullable=False)
     img_url = db.Column(db.String(250), nullable=False)
     link = db.Column(db.String(250), nullable=False)
+    bg_color = db.Column(db.String(250), nullable=False)
 
 class NewContactForm(FlaskForm):
     name = StringField('', validators=[DataRequired()], render_kw={'placeholder': 'Name'})
@@ -126,7 +116,7 @@ with app.app_context():
 #     img_url = 'static/images/mysql.svg'
 # )
 
-# # work seed
+# # # work seed
 # entertainment = Work(
 #     title = 'Full Stack Entertainment App',
 #     img_url = 'static/images/work/entertainmentApp.png',
@@ -182,7 +172,7 @@ with app.app_context():
 #     code = 'https://github.com/roodhouse/UPIN'
 # )
 
-# # project seed
+# # # project seed
 # connect_four = Project(
 #     title = 'Connect Four',
 #     img_url = 'static/images/project/connectFour.png',
@@ -275,33 +265,37 @@ with app.app_context():
 #     code = 'https://github.com/roodhouse/frontend-mentor-workit-landing-page'
 # )
 
-# social seed
+# # # social seed
 
-linkedin = Social(
-    name = 'LinkedIn',
-    img_url = 'static/images/social/linkedin.svg',
-    link = 'https://www.linkedin.com/in/john-m-rugh/'
-)
+# linkedin = Social(
+#     name = 'LinkedIn',
+#     img_url = 'static/images/social/linkedin.svg',
+#     link = 'https://www.linkedin.com/in/john-m-rugh/',
+#     bg_color = '#2563EB'
+# )
 
-github = Social(
-    name = 'Github',
-    img_url = 'static/images/social/github.svg',
-    link = 'https://github.com/roodhouse'
-)
+# github = Social(
+#     name = 'Github',
+#     img_url = 'static/images/social/github.svg',
+#     link = 'https://github.com/roodhouse',
+#     bg_color = '#333333'
+# )
 
-email = Social(
-    name = 'Email',
-    img_url = 'static/images/social/email.svg',
-    link = 'mailto: rughjm@gmail.com'
-)
+# email = Social(
+#     name = 'Email',
+#     img_url = 'static/images/social/email.svg',
+#     link = 'mailto: rughjm@gmail.com',
+#     bg_color = '#6fc2b0'
+# )
 
-resume = Social(
-    name = 'Resume',
-    img_url = 'static/images/social/resume.svg',
-    link = 'https://drive.google.com/file/d/1LeYXcuW6_-x19RBl2a57_uDf4rbFO1Gn/view?usp=drive_link'
-)
+# resume = Social(
+#     name = 'Resume',
+#     img_url = 'static/images/social/resume.svg',
+#     link = 'https://drive.google.com/file/d/139Km3FZpDCBKM2_d1czCcPPaT94pHVwG/view?usp=sharing',
+#     bg_color = '#565f69'
+# )
 
-with app.app_context():
+# with app.app_context():
 #     db.session.add(entertainment)
 #     db.session.add(galleria)
 #     db.session.add(space)
@@ -339,12 +333,12 @@ with app.app_context():
 #     db.session.add(pod)
 #     db.session.add(skilled)
 #     db.session.add(work_it)
-    # db.session.add(linkedin)
-    # db.session.add(github)
-    # db.session.add(email)
-    # db.session.add(resume)
+#     db.session.add(linkedin)
+#     db.session.add(github)
+#     db.session.add(email)
+#     db.session.add(resume)
 
-    db.session.commit()
+#     db.session.commit()
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
@@ -354,10 +348,12 @@ def home():
             result = db.session.execute(db.select(Skills))
             work_result = db.session.execute(db.select(Work))
             project_result = db.session.execute(db.select(Project))
+            social_result = db.session.execute(db.select(Social))
             all_skills = list(result.scalars())
             all_work = list(work_result.scalars())
             all_project = list(project_result.scalars())
-        return render_template("index.html", skills=all_skills, work=all_work, project=all_project, form=form)
+            all_social = list(social_result.scalars())
+        return render_template("index.html", skills=all_skills, work=all_work, project=all_project, social=all_social, form=form)
     else:
         if form.validate_on_submit():
             

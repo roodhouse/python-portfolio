@@ -25,5 +25,15 @@
     </div>
 
     <!-- Social Icons -->
-    <div id="socialIcons" class="d-none d-lg-flex "></div>
+    <div id="socialIcons" class="d-none d-lg-flex ">
+        <ul class="p-0">
+            {% for s in social %}
+                <li id="{{s.name}}" class="socialClass" style="background-color: {{s.bg_color}};">
+                    <a id="{{s.name}}_link" href="{{s.link}}" class="socialLink" target="_blank">
+                        {{s.name}} <img src="{{s.img_url}}" alt="social media icon">
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 </nav>
