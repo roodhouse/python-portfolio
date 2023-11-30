@@ -2,6 +2,11 @@
     scroll-behavior: smooth;
 }
 
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 body {
     font-family: "Raleway";
     background-color: #0a192f;
@@ -19,6 +24,7 @@ body {
     height: 80px;
     background-color: #0a192f;
     position: fixed;
+    flex-wrap: nowrap;
 }
 
 .mobileMenu {
@@ -55,6 +61,14 @@ body {
     height: 100vh;
 }
 
+#homeContainerTwo {
+    max-width: 1000px;
+}
+
+.johnImg {
+    border-radius: 5%;
+}
+
 .nameIs {
     color: #ff5757;
 }
@@ -75,6 +89,10 @@ body {
     max-width: 700px;
     padding: 1rem 0 1rem 0;
     color: #8892B0;
+}
+
+#viewWork {
+    text-decoration: none;
 }
 
 .viewMoreButton {
@@ -118,7 +136,7 @@ body {
 }
 
 .g-2rem {
-    --bs-gutter-x: 2rem;
+    gap: 2rem;
 }
 
 .pb-2rem {
@@ -289,4 +307,100 @@ body {
 #submit:hover {
     background-color: #ff5757;
     border-color: #ff5757;
+}
+
+/* Media queries */
+
+/* small */
+@media only screen and (min-width: 575px) {
+    .fullName, .webDev {
+        font-size: 4.5rem;
+        line-height: 1;
+    }
+
+    #aboutCopyTextContainer {
+        display: grid;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #aboutCopyTitleContainer {
+        display: grid;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        padding-bottom: 2rem;
+    }
+
+    #aboutCopyTitle, #aboutCopyText {
+        text-align: right;
+        width: 100%;
+    }
+
+    .skillGrid, .projectGrid {
+        grid-template-columns: repeat(4,minmax(0,1fr));
+    }
+
+    .workGrid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+    #contactContainer {
+        width: 100%;
+    }
+
+    form div:last-of-type {
+        margin-bottom: 0 !important;
+    }
+}
+
+/* medium */
+@media only screen and (min-width: 768px) {
+    .nav-link {
+        padding: 0 16px;
+    }
+
+    .workGrid {
+        grid-template-columns: repeat(3,minmax(0,1fr));
+    }
+
+    .projectGrid {
+        grid-template-columns: repeat(6,minmax(0,1fr));
+    }
+
+    #contactContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #contactTitleContainer {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    #workWrapper {
+        padding-top: 150px;
+    }
+}
+
+/* large */
+@media only screen and (min-width: 992px) {
+    .navbar-expand-lg {
+        justify-content: space-between;
+    }
+
+    #homeContainer, #aboutCopyTextContainer {
+        padding: 0 42px;
+    }
+
+    #aboutContainer, #skillsContainer, #workContainer {
+        max-width: 1000px;
+    }
+
+    #socialIcons {
+        position: fixed;
+        flex-direction: column;
+        top: 35%;
+        left: 0;
+    }
 }
