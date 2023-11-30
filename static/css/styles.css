@@ -20,6 +20,10 @@ body {
     color: #ff5757;
 }
 
+#navImg {
+    margin-left: -32px;
+}
+
 .active {
     display: block;
 }
@@ -361,6 +365,10 @@ body {
 @media only screen and (min-width: 768px) {
     .nav-link {
         padding: 0 16px;
+    }
+
+    .navContact {
+        padding: 0;
     }
 
     .workGrid {
