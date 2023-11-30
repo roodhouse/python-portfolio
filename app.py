@@ -302,7 +302,7 @@ with app.app_context():
 # resume = Social(
 #     name = 'Resume',
 #     img_url = 'static/images/social/resume.svg',
-#     link = 'https://drive.google.com/file/d/1LeYXcuW6_-x19RBl2a57_uDf4rbFO1Gn/view?usp=drive_link',
+#     link = 'https://drive.google.com/file/d/139Km3FZpDCBKM2_d1czCcPPaT94pHVwG/view?usp=sharing',
 #     bg_color = '#565f69'
 # )
 
