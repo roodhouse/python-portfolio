@@ -403,4 +403,27 @@ body {
         top: 35%;
         left: 0;
     }
+
+    .socialClass {
+        width: 160px;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: -100px;
+
+    }
+
+    .socialClass:hover {
+        margin-left: -10px;
+        transition-duration: 300ms;
+    }
+
+    .socialLink {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        color: #D1D5DB;
+    }
 }
