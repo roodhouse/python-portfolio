@@ -49,6 +49,12 @@ class Contact(db.Model):
     email = db.Column(db.String(250), nullable=False)
     message = db.Column(db.String(1000), nullable=False)
 
+class Social(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(250), nullable=False)
+    img_url = db.Column(db.String(250), nullable=False)
+    link = db.Column(db.String(250), nullable=False)
+
 class NewContactForm(FlaskForm):
     name = StringField('', validators=[DataRequired()], render_kw={'placeholder': 'Name'})
     email = EmailField('', validators=[DataRequired()], render_kw={'placeholder': 'Email'})
@@ -57,6 +63,7 @@ class NewContactForm(FlaskForm):
 
 with app.app_context():
     db.create_all()
+    db.session.commit
 
 # seed db
 # html = Skills(
@@ -268,7 +275,33 @@ with app.app_context():
 #     code = 'https://github.com/roodhouse/frontend-mentor-workit-landing-page'
 # )
 
-# with app.app_context():
+# social seed
+
+linkedin = Social(
+    name = 'LinkedIn',
+    img_url = 'static/images/social/linkedin.svg',
+    link = 'https://www.linkedin.com/in/john-m-rugh/'
+)
+
+github = Social(
+    name = 'Github',
+    img_url = 'static/images/social/github.svg',
+    link = 'https://github.com/roodhouse'
+)
+
+email = Social(
+    name = 'Email',
+    img_url = 'static/images/social/email.svg',
+    link = 'mailto: rughjm@gmail.com'
+)
+
+resume = Social(
+    name = 'Resume',
+    img_url = 'static/images/social/resume.svg',
+    link = 'https://drive.google.com/file/d/1LeYXcuW6_-x19RBl2a57_uDf4rbFO1Gn/view?usp=drive_link'
+)
+
+with app.app_context():
 #     db.session.add(entertainment)
 #     db.session.add(galleria)
 #     db.session.add(space)
@@ -306,7 +339,12 @@ with app.app_context():
 #     db.session.add(pod)
 #     db.session.add(skilled)
 #     db.session.add(work_it)
-#     db.session.commit()
+    # db.session.add(linkedin)
+    # db.session.add(github)
+    # db.session.add(email)
+    # db.session.add(resume)
+
+    db.session.commit()
 
 @app.route("/", methods=['GET', 'POST'])
 def home():

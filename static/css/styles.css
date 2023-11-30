@@ -61,6 +61,14 @@ body {
     height: 100vh;
 }
 
+#homeContainerTwo {
+    max-width: 1000px;
+}
+
+.johnImg {
+    border-radius: 5%;
+}
+
 .nameIs {
     color: #ff5757;
 }
@@ -81,6 +89,10 @@ body {
     max-width: 700px;
     padding: 1rem 0 1rem 0;
     color: #8892B0;
+}
+
+#viewWork {
+    text-decoration: none;
 }
 
 .viewMoreButton {
@@ -379,5 +391,16 @@ body {
 
     #homeContainer, #aboutCopyTextContainer {
         padding: 0 42px;
+    }
+
+    #aboutContainer, #skillsContainer, #workContainer {
+        max-width: 1000px;
+    }
+
+    #socialIcons {
+        position: fixed;
+        flex-direction: column;
+        top: 35%;
+        left: 0;
     }
 }
