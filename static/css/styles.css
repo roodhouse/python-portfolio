@@ -65,12 +65,25 @@ body {
 }
 
 #homeContainer {
-    padding: 0 2rem 0 2rem;
+    padding: 80px 2rem 0 2rem;
     height: 100vh;
 }
 
 #homeContainerTwo {
     max-width: 1000px;
+}
+
+#homeCopyContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#homeCopyText {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .johnImg {
@@ -88,19 +101,27 @@ body {
 }
 
 .webDev {
-    font-size: 2.25rem;
+    font-size: 1.8rem;
     line-height: 2.5rem;
     color: #8892B0;
+    margin-bottom: 0;
 }
 
 .tagLine {
     max-width: 700px;
-    padding: 1rem 0 1rem 0;
-    color: #8892B0;
+    padding: 0 0 1rem 0;
+    color: #ff5757;
 }
 
 #viewWork {
     text-decoration: none;
+    padding-top: 1rem;
+    order: 3;
+}
+
+.viewMore {
+    padding-top: 1rem;
+    order: 3;
 }
 
 .viewMoreButton {
@@ -109,7 +130,6 @@ body {
     border-width: 2px;
     display: flex;
     align-items: center;
-    margin: 0.5rem 0 0.5rem 0;
     cursor: pointer;
     background-color: transparent;
     color: white;
@@ -133,7 +153,7 @@ body {
 }
 
 .homeImageContainer {
-    margin-left: 5%;
+    order: 2;
 }
 
 /* about section */
@@ -164,11 +184,15 @@ body {
     height: 100vh;
 }
 
+#aboutCopyTitleContainer {
+    width: 100%;
+}
+
 /* skills */
 
 #skillsWrapper {
     padding-bottom: 300px;
-    padding-top: 200px;
+    padding-top: 280px;
 }
 
 .skillGrid {
@@ -224,7 +248,7 @@ body {
 }
 
 #workWrapper {
-    padding-top: 200px;
+    padding-top: 80px;
     padding-bottom: 300px;
 }
 
@@ -277,7 +301,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+#contactContainer {
+    padding-top: 180px;
 }
 
 .form {
