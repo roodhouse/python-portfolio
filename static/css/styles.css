@@ -415,7 +415,12 @@ body {
     }
 
     #largeWidthSetup {
-        display: initial;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 100%;
+        max-width: 50%;
+        align-items: flex-end;
     }
 
     #homeCopyContainer > :nth-child(-n+2) {
@@ -423,7 +428,7 @@ body {
     }
 
     #homeCopyText {
-        max-width: 50%;
+        max-width: 100%;
     }
 
     .fullName {
@@ -442,6 +447,22 @@ body {
 
     .tagLine {
         padding: 0;
+    }
+
+    .viewMore {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-right: 5%;
+        padding: 0;
+    }
+
+    #viewWork {
+        padding: 0;
+    }
+
+    #aboutWrapper {
+    padding: 0 2rem 0 2rem;
     }
 
     .workGrid {
