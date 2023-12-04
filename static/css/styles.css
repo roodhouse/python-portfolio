@@ -12,6 +12,10 @@ body {
     background-color: #0a192f;
 }
 
+#largeWidthSetup {
+    display: none;
+}
+
 .nav-link {
     color: #d1d5db
 }
@@ -396,6 +400,47 @@ body {
     }
 
     .navContact {
+        padding: 0;
+    }
+
+    #homeContainer {
+        height: 100vh;
+        padding-top: 0;
+    }
+
+    #homeCopyContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #largeWidthSetup {
+        display: initial;
+    }
+
+    #homeCopyContainer > :nth-child(-n+2) {
+        display: none;
+    }
+
+    #homeCopyText {
+        max-width: 50%;
+    }
+
+    .fullName {
+        font-size: 3rem;
+    }
+
+    .webDev {
+        font-size: 2.1rem;
+        line-height: 3rem;
+    }
+
+    #homeImageContainer {
+        max-width: 50%;
+        display: flex;
+    }
+
+    .tagLine {
         padding: 0;
     }
 
