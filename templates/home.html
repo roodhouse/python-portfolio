@@ -1,18 +1,20 @@
 <div id="homeContainer" class="mx-auto d-flex flex-column justify-content-center">
     <div id="homeContainerTwo" class="d-flex flex-row justify-content-center">
         <div id="homeCopyContainer">
-            <p class="nameIs m-0">Hi, my name is</p>
-            <h1 class="fullName fw-bolder m-0">John Rugh</h1>
-            <h2 class="webDev fw-bolder">I'm a Web Developer.</h2>
-            <p class="tagLine m-0">I love taking ideas from concept to reality.</p>
+            <div id="homeCopyText">
+                <p class="nameIs m-0">Hi, my name is</p>
+                <h1 class="fullName fw-bolder m-0">John Rugh</h1>
+                <h2 class="webDev fw-bolder">I'm a Web Developer.</h2>
+                <p class="tagLine m-0">I love taking ideas from concept to reality.</p>
+            </div>
             <div class="viewMore">
                 <a id="viewWork" href="#workWrapper">
                     <button class="viewMoreButton">View Work<span><img class="arrowImage" src="{{ url_for('static', filename='images/arrow.svg') }}" alt="arrow"></span></button>
                 </a>
             </div>
-        </div>
-        <div id="homeImageContainer" class="homeImageContainer h-100 h-md-75 w-100">
-            <img src="{{ url_for('static', filename='images/me.jpg') }}" alt="John Rugh" class="h-md-100 mw-100 johnImg">
+            <div id="homeImageContainer" class="homeImageContainer h-100 h-md-75 w-100">
+                <img src="{{ url_for('static', filename='images/meagainBluejpg.jpg') }}" alt="John Rugh" class="h-md-100 mw-100 johnImg">
+            </div>
         </div>
     </div>
 </div>
