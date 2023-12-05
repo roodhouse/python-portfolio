@@ -17,11 +17,14 @@ body {
 }
 
 .webDev2 {
-    display: initial;
+    display: none;
+    color: #8892B0;
+    margin: 0;
 }
 
 .nav-link {
-    color: #d1d5db
+    color: #d1d5db;
+    cursor: pointer;
 }
 
 .nav-link:hover {
@@ -75,6 +78,9 @@ body {
 #homeContainer {
     padding: 80px 2rem 0 2rem;
     height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
 }
 
 #homeContainerTwo {
@@ -433,6 +439,7 @@ body {
 
     #homeCopyText {
         max-width: 100%;
+        width: 100%;
     }
 
     .fullName {
@@ -457,7 +464,6 @@ body {
         display: flex;
         justify-content: center;
         width: 100%;
-        margin-right: 5%;
         padding: 0;
     }
 
@@ -595,5 +601,31 @@ body {
         color: #D1D5DB;
         padding: 0 1rem;
         text-decoration: none;
+    }
+}
+
+/* xlarge */
+@media only screen and (min-width: 1280px) {
+    #homeCopyContainer {
+        padding: 0;
+    }
+
+    #largeWidthSetup {
+        height: 50%;
+    }
+
+    #homeImageContainer {
+        max-height: 50%;
+    }
+
+    .webDev2 {
+        margin: 0;
+    }
+
+    #homeContainer {
+        margin: 0;
+        padding: 0;
+        flex-direction: row;
+        width: 100%;
     }
 }
