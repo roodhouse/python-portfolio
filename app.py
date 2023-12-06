@@ -11,7 +11,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 
-# next work on 1280 breakpoint
+# going to nest css rules within different viewports based on landscape/portrait
 
 load_dotenv()
 
