@@ -11,7 +11,9 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 
-# going to nest css rules within different viewports based on landscape/portrait
+# generate requirements.txt
+# prepare server on AWS
+# move publish and move site
 
 load_dotenv()
 
