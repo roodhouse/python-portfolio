@@ -10,7 +10,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-# prepare server on AWS
+# add readme
 # move publish and move site
 
 load_dotenv()
