@@ -10,9 +10,6 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-# add readme
-# move publish and move site
-
 load_dotenv()
 
 app = Flask(__name__)
