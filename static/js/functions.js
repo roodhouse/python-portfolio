@@ -1,5 +1,6 @@
-function toggleClass(event, currentId, otherId) {
-
+function toggleClass(event, currentId, otherId, sectionWrapper) {
+    console.log(event)
+    event.preventDefault()
     let currentElement = document.getElementById(currentId)
     let otherElement = document.getElementById(otherId)
     let mobileMenu = document.getElementById('mobileMenu')
@@ -15,5 +16,10 @@ function toggleClass(event, currentId, otherId) {
     } else {
         mobileMenu.classList.replace('active', 'inactive')
         logo.style.visibility = 'visible'
+    }
+
+    const section = document.getElementById(sectionWrapper)
+    if (section) {
+        section.scrollIntoView({behavior: 'smooth'})
     }
 }
