@@ -16,6 +16,10 @@ body {
     display: none;
 }
 
+#socialIcons {
+    display: none;
+}
+
 .webDev2 {
     display: none;
     color: #8892B0;
@@ -44,6 +48,7 @@ body {
     background-color: #0a192f;
     position: fixed;
     flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
 @media only screen and (orientation: portrait) {
@@ -514,6 +519,10 @@ body {
         .navbar-expand-lg {
             justify-content: space-between;
         }
+
+        #socialIcons {
+            display: flex;
+        }
     
         #homeContainer {
             padding: 0 42px;
@@ -659,7 +668,7 @@ body {
         line-height: 2.5rem;
     }
 
-    @media only screen and (min-width:375px) {
+    @media only screen and (min-height:375px) {
 
         .mobileMenu {
             display: flex;
@@ -678,7 +687,7 @@ body {
         }
         
         .mobileMenu a {
-            padding: 1.5rem;
+            padding: .75rem;
             font-size: 2.25rem;
             line-height: 2.5rem;
         }
@@ -690,6 +699,14 @@ body {
         .inactive {
             display: none;
         }
+
+        .nav-link {
+            padding: 0 1rem;
+        }
+
+        .nav-link.navContact {
+            padding-right: 0;
+        }
         
         #homeContainer {
             padding: 80px 2rem 0 2rem;
@@ -699,6 +716,16 @@ body {
             margin-right: auto;
             flex-direction: column;
         }
+
+        #homeCopyContainer > :nth-child(-n+2) {
+            display: none;
+        }
+
+        #largeWidthSetup {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         
         #homeContainerTwo {
             max-width: 1000px;
@@ -706,15 +733,20 @@ body {
         
         #homeCopyContainer {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: wrap;
             align-items: center;
+            justify-content: space-between;
         }
         
         #homeCopyText {
-            order: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        #homeImageContainer {
+            max-width: 45%;
         }
         
         .johnImg {
@@ -747,12 +779,10 @@ body {
         #viewWork {
             text-decoration: none;
             padding-top: 1rem;
-            order: 3;
         }
         
         .viewMore {
             padding-top: 1rem;
-            order: 3;
         }
         
         .viewMoreButton {
@@ -783,15 +813,19 @@ body {
             transition: transform 0.3s ease;
         }
         
-        .homeImageContainer {
-            order: 2;
-        }
-        
         /* about section */
         
         #aboutWrapper, #skillsWrapper, #workWrapper, #contactWrapper {
             background-color: #0a192f;
             color: #d1d5db;
+        }
+
+        #aboutWrapper {
+            padding: 2rem 1rem 0 1rem;
+        }
+
+        #aboutPara p {
+            margin-bottom: 0;
         }
         
         .g-2rem {
@@ -824,17 +858,17 @@ body {
         
         #skillsWrapper {
             padding-bottom: 300px;
-            padding-top: 100px;
+            padding-top: 80px;
         }
         
         .skillGrid {
             display: grid;
             gap: 1rem;
-            grid-template-columns: repeat(2,minmax(0,1fr));
+            grid-template-columns: repeat(4,minmax(0,1fr));
         }
         
         .pt-2rem {
-            padding-top: 2rem;
+            padding-top: 0rem;
         }
         
         .skillsItems {
@@ -858,7 +892,11 @@ body {
         
         .workGrid, .projectGrid {
             display: grid;
-            gap: 1rem;
+            gap: 2rem;
+        }
+
+        #projectTitleContainer {
+            padding-top: 1rem;
         }
         
         .workItems, .projectItems {
@@ -928,7 +966,8 @@ body {
         /* contact */
         
         #contactWrapper {
-            height: 100vh;
+            min-height: 100vh;
+            height: auto;
             padding: 1rem;
             display: flex;
             justify-content: center;
@@ -936,7 +975,7 @@ body {
         }
         
         #contactContainer {
-            padding-top: 85px;
+            padding-top: 60px;
         }
         
         .form {
@@ -982,14 +1021,10 @@ body {
     }
 
     /* small */
-    @media only screen and (min-width: 575px) {
+    @media only screen and (min-height: 575px) {
     
         #homeContainer {
             height: 100%;
-        }
-    
-        #homeImageContainer {
-            max-width: 75%;
         }
     
         #aboutCopyTitleContainer {
@@ -1002,16 +1037,16 @@ body {
             width: 100%;
         }
     
-        #skillsWrapper {
-            padding-top: 50px;
-        }
-    
         .skillGrid, .projectGrid {
             grid-template-columns: repeat(4,minmax(0,1fr));
         }
     
         .workGrid {
             grid-template-columns: repeat(2,minmax(0,1fr));
+        }
+
+        .workGrid, .projectGrid {
+            gap: 1rem;
         }
     
         #workWrapper {
@@ -1021,6 +1056,14 @@ body {
         #contactContainer {
             width: 100%;
             padding-top: 75px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #contactTitleContainer {
+            width: 100%;
+            max-width: 600px;
         }
     
         form div:last-of-type {
@@ -1028,7 +1071,7 @@ body {
         }
     }
     /* medium */
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-height: 768px) {
         .nav-link {
             padding: 0 16px;
         }
@@ -1074,10 +1117,18 @@ body {
             font-size: 2.1rem;
             line-height: 3rem;
         }
+
+        .navbar-expand-lg {
+            justify-content: space-between;
+        }
     
         #homeImageContainer {
             max-width: 50%;
             display: flex;
+        }
+
+        #largeWidthSetup {
+            height: initial;
         }
     
         .tagLine {
@@ -1088,7 +1139,7 @@ body {
             display: flex;
             justify-content: center;
             width: 100%;
-            padding: 0;
+            padding: 20px 0 0 0;
         }
     
         #viewWork {
@@ -1121,9 +1172,9 @@ body {
     }
     
     /* large */
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-height: 992px) {
         .navbar-expand-lg {
-            justify-content: space-between;
+            justify-content: space-between !important;
         }
     
         #homeContainer {
@@ -1198,6 +1249,7 @@ body {
     
         #socialIcons {
             position: fixed;
+            display: flex;
             flex-direction: column;
             top: 35%;
             left: 0;
@@ -1230,7 +1282,8 @@ body {
     }
     
     /* xlarge */
-    @media only screen and (min-width: 1280px) {
+    @media only screen and (min-height: 1280px) {
+
         #homeCopyContainer {
             padding: 0;
         }
