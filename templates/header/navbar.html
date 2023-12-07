@@ -8,11 +8,11 @@
         <a ><img src="{{ url_for('static', filename='images/x.svg') }}" alt="menu bars" width="16px" id="x" class="inactive" onclick="toggleClass(event, 'x', 'ham')"></a>
     </div>
     <div id="mobileMenu" class="inactive mobileMenu modal-fullscreen-md-down navbar-nav mr-auto">
-        <a class='nav-link' href="#homeWrapper" onclick="toggleClass(event, 'x', 'ham')">Home</a>
-        <a class='nav-link' href="#aboutWrapper" onclick="toggleClass(event, 'x', 'ham')">About</a>
-        <a class='nav-link' href="#skillsWrapper" onclick="toggleClass(event, 'x', 'ham')">Skills</a>
-        <a class='nav-link' href="#workWrapper" onclick="toggleClass(event, 'x', 'ham')">Work</a>
-        <a class='nav-link' href="#contactWrapper" onclick="toggleClass(event, 'x', 'ham')">Contact</a>
+        <a class='nav-link' href="#homeWrapper" onclick="toggleClass(event, 'x', 'ham', 'homeWrapper')">Home</a>
+        <a class='nav-link' href="#aboutWrapper" onclick="toggleClass(event, 'x', 'ham', 'aboutWrapper')">About</a>
+        <a class='nav-link' href="#skillsWrapper" onclick="toggleClass(event, 'x', 'ham', 'skillsWrapper')">Skills</a>
+        <a class='nav-link' href="#workWrapper" onclick="toggleClass(event, 'x', 'ham', 'workWrapper')">Work</a>
+        <a class='nav-link' href="#contactWrapper" onclick="toggleClass(event, 'x', 'ham', 'contactWrapper')">Contact</a>
      </div>
 
     <!-- display none until mid viewport -->
