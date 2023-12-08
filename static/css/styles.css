@@ -35,10 +35,6 @@ body {
     color: #ff5757;
 }
 
-#navImg {
-    margin-left: -32px;
-}
-
 .active {
     display: block;
 }
