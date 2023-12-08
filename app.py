@@ -276,7 +276,7 @@ with app.app_context():
 
 # linkedin = Social(
 #     name = 'LinkedIn',
-#     img_url = 'static/images/social/linkedIn.svg',
+#     img_url = 'static/images/social/linkedin.svg',
 #     link = 'https://www.linkedin.com/in/john-m-rugh/',
 #     bg_color = '#2563EB'
 # )
