@@ -668,6 +668,10 @@ body {
         line-height: 2.5rem;
     }
 
+    #aboutContainer, #skillsContainer, #workContainer {
+        max-width: 800px;
+    }
+
     @media only screen and (min-height:375px) {
 
         .mobileMenu {
@@ -1149,6 +1153,14 @@ body {
         #aboutWrapper {
         padding: 0 2rem 0 2rem;
         }
+
+        /* #aboutContainer, #skillsContainer, #workContainer {
+            max-width: 800px;
+        } */
+
+        #aboutCopyText, #aboutPara {
+            width: 47%;
+        }
     
         .workGrid {
             grid-template-columns: repeat(3,minmax(0,1fr));
@@ -1220,9 +1232,9 @@ body {
             padding-left: 60px;
         }
     
-        #aboutContainer, #skillsContainer, #workContainer {
+        /* #aboutContainer, #skillsContainer, #workContainer {
             max-width: 800px;
-        }
+        } */
     
         #skillsWrapper, #workWrapper {
             display: flex;
@@ -1243,9 +1255,9 @@ body {
             padding-top: 200px;
         }
         
-        #aboutCopyText, #aboutPara {
+        /* #aboutCopyText, #aboutPara {
             width: 48%;
-        }
+        } */
     
         #socialIcons {
             position: fixed;
